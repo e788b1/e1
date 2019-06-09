@@ -1,0 +1,6 @@
+#!/bin/bash
+
+zipfile="$1"
+pw="$2"
+LANG=C 7za x "$2" "$1" -o"$1"-unziped
+convmv -f GBK -t utf8 --notest -r "$1"-unziped

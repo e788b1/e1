@@ -1,0 +1,44 @@
+! Xresources
+Xcursor.size: 16
+!URxvt*font:   9x15, xft:xos4 Terminus-10, xft:WenQuanYi WenQuanYi Bitmap Song-8,xft:Symbola
+URxvt*font:   xft:xos4 Terminus-12, xft:WenQuanYi WenQuanYi Bitmap Song-9,xft:Symbola
+URxvt.preeditType:Root
+
+URxvt.termName    : rxvt-256color
+URxvt.iso14755    : false
+URxvt.urgentOnBell: true
+URxvt.saveLines   : 12000
+URxvt.scrollBar   : false
+URxvt.scrollstyle : rxvt
+URxvt.print-pipe: cat > /tmp/URxvt.print-pipe
+URxvt.perl-ext-common:default,clipboard,font-size,matcher,keyboard-select,url-select
+URxvt.keysym.M-x           : perl:keyboard-select:activate
+URxvt.keysym.M-c           : perl:clipboard:copy
+URxvt.keysym.M-v           : perl:clipboard:paste
+URxvt.keysym.M-C-v         : perl:clipboard:paste_escaped
+URxvt.keysym.C-equal       : perl:font-size:increase
+URxvt.keysym.C-minus       : perl:font-size:decrease
+URxvt.keysym.M-u           : perl:url-select:select_next
+URxvt.url-select.launcher  : xdg-open
+URxvt.url-select.autocopy  : true
+URxvt.url-select.underline : true
+URxvt.matcher.button       : 1
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+
+! rofi stuff
+rofi.lines: 20
+rofi.width: 30
+rofi.columns: 3
+rofi.bw: 2
+rofi.font: xos4 Terminus 12
+rofi.color-window: #0e1112,#75b2b3,#75b2b3
+rofi.color-normal: #0e1112,#ddccbb,#0B0E0E,#323232,#ddccbb
+rofi.hide-scrollbar: true
+rofi.terminal: urxvt
+
+! colors
+URxvt.color12: rgb:5c/5c/ff
+URxvt.intensityStyles:   false
+*fading:                10

@@ -1,0 +1,49 @@
+## config
+
+*/* alsa caps bluetooth cairo cjk consolekit dbus
+*/* ffmpeg flac fontconfig glamor
+*/* icu jack jpeg lcms lzma mp3
+*/* ogg opengl perl png policykit python pulseaudio
+*/* svg threads tiff truetype
+*/* udev unicode vaapi vorbis wavpack
+*/* X xattr x264 x265 xft xinerama
+#
+
+media-fonts/terminus-font ceneterd-tilde distinct-l ru-dv du-g ru-i
+kde-*/* -handbook -kwallet
+media-sound/pulseaudio alsa dbus realtime sox -ssl -gtk
+media-sound/jack2 alsa libsamplerate
+
+dev-lang/ghc binary
+x11-misc/xmobar timezone inotify
+dev-haskell/* profile doc hscolour
+*/ffmpeg librtmp openssl ssh
+net-misc/aria2 adns bittorrent libuv metalink sqlite ssh tcmalloc xmlrpc
+www-client/w3m imlib
+app-i18n/scim gtk3
+
+#
+x11-terms/rxvt-unicode 256-color fading-colors unicode3 vanilla
+app-i18n/fcitx gtk2 gtk3
+dev-lang/python sqlite
+app-arch/unzip natspec
+x11-themes/gtk-engines-murrine -themes
+app-arch/p7zip rar -kde -wxwidgets
+sys-libs/zlib minizip
+x11-misc/dunst dunstify
+app-text/ghostscript-gpl cups
+
+x11-libs/cairo xcb
+x11-libs/libxcb xkb
+app-text/xmlto text
+media-libs/libpng apng
+
+dev-db/sqlite secure-delete
+media-libs/libvpx svc postproc
+dev-libs/libpcre2 pcre16
+# required by x11-misc/qcomicbook-0.9.1::gentoo
+# required by x11-misc/qcomicbook (argument)
+>=app-text/poppler-0.74.0 qt5
+# required by x11-misc/pcmanfm-1.2.5::gentoo
+# required by x11-misc/pcmanfm (argument)
+>=x11-libs/libfm-1.2.5 gtk

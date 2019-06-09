@@ -1,0 +1,75 @@
+Processor type and features  --->
+  Processor family (Intel Core AVX2)
+  <*> CPU microcode loading support
+  [*] Intel microcode loading support
+Power management and ACPI options  --->
+  [*] ACPI (Advanced Configuration and Power Interface) Support  --->
+    <*> Battery
+    <*> Video
+  CPU Frequency scaling  --->
+    Default CPUFreq governor (performance)
+    <*> 'performance' governor
+    x86 CPU frequency scaling drivers  --->
+      [*] Intel P state control
+[*] Networking support  --->
+  <*> Bluetooth subsystem support  --->
+    Bluetooth device drivers  --->
+      <*> HCI USB driver
+  <*> Wireless  --->
+    <*> cfg80211 - wireless configuration API
+    <*> Generic IEEE 802.11 Networking Stack (mac80211)
+  <*> RF switch subsystem support
+Device Drivers  --->
+  Misc devices  --->
+    <*> Intel Management Engine Interface
+    <*> ME Enabled Intel Chipsets
+  SCSI device support  --->
+    <*> SCSI disk support
+    [*] Probe all LUNs on each SCSI device
+  <*> Serial ATA and Parallel ATA drivers  --->
+    <*> AHCI SATA support
+  [*] Network device support  --->
+    [*] Ethernet driver support  --->
+      [*] Intel devices
+        <*> Intel(R) PRO/1000 PCI-Express Gigabit Ethernet support
+    [*] Wireless LAN  --->
+      <*> Intel Wireless WiFi Next Gen AGN - Wireless-N/Advanced-N/Ultimate-N (iwlwifi)
+      <*> Intel Wireless WiFi MVM Firmware support
+  <*> I2C support  --->
+    I2C Hardware Bus support  --->
+      <*> Intel 82801 (ICH/PCH)
+  <*> Hardware Monitoring support  --->
+    <*> Intel Core/Core2/Atom temperature sensor
+  [*] Watchdog Timer Support  --->
+    <*> Intel TCO Timer/Watchdog
+  Multifunction device drivers  --->
+    <*> Intel ICH LPC
+    <*> Realtek PCI-E card reader
+  <*> Multimedia support  --->
+    [*] Media USB Adapters  --->
+      <*> USB Video Class (UVC)
+  Graphics support  --->
+    <*> Direct Rendering Manager (XFree86 4.1.0 and higher DRI support)
+    <*> Intel 8xx/9xx/G3x/G4x/HD Graphics
+      [*] Enable modesetting on intel by default
+      [*] Enable legacy fbdev support for the modesettting intel driver
+    Console display driver support  --->
+      <*> Framebuffer Console support
+  <*> Sound card support  --->
+    <*> Advanced Linux Sound Architecture  --->
+      [*] PCI sound devices  --->
+        <*> Intel HD Audio  --->
+          [*] Build HDMI/DisplayPort HD-audio codec support
+  [*] USB support  --->
+    <*> xHCI HCD (USB 3.0) support
+    <*> EHCI HCD (USB 2.0) support
+  <*> MMC/SD/SDIO card support
+    <*> Realtek PCI-E SD/MMC Card Interface Driver
+  [*] X86 Platform Specific Device Drivers  --->
+    <*> ThinkPad ACPI Laptop Extras
+  [*] IOMMU Hardware Support  --->
+    [*] Support for Intel IOMMU using DMA Remapping Devices
+    [*]  Enable Intel DMA Remapping Devices by default
+    [*] Support for Interrupt Remapping
+[*] Cryptographic API  --->
+  <*> AES cipher algorithms (AES-NI)

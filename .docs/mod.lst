@@ -1,0 +1,85 @@
+Module                  Size  Used by
+ctr                    13049  1 
+ccm                    17773  1 
+arc4                   12608  2 
+brcmsmac              563041  0 
+cordic                 12574  1 brcmsmac
+brcmutil               15618  1 brcmsmac
+b43                   387371  0 
+mac80211              630653  2 b43,brcmsmac
+intel_rapl             18773  0 
+cfg80211              484040  3 b43,brcmsmac,mac80211
+x86_pkg_temp_thermal    14205  0 
+snd_hda_codec_hdmi     46254  1 
+dm_crypt               23177  0 
+intel_powerclamp       14705  0 
+snd_hda_codec_conexant    57441  1 
+coretemp               13435  0 
+snd_hda_intel          52355  5 
+uvcvideo               80885  0 
+ssb                    62379  1 b43
+snd_hda_codec         192906  3 snd_hda_codec_hdmi,snd_hda_codec_conexant,snd_hda_intel
+videobuf2_vmalloc      13216  1 uvcvideo
+snd_hwdep              13602  1 snd_hda_codec
+rts5139               335409  0 
+mfd_rtsx_usb
+kvm                   451511  0 
+snd_pcm               102099  3 snd_hda_codec_hdmi,snd_hda_codec,snd_hda_intel
+videobuf2_memops       13362  1 videobuf2_vmalloc
+videobuf2_core         40664  1 uvcvideo
+bnep                   19624  2 
+videodev              134688  2 uvcvideo,videobuf2_core
+dm_multipath           22873  0 
+rfcomm                 69160  0 
+snd_page_alloc         18710  2 snd_pcm,snd_hda_intel
+snd_seq_midi           13324  0 
+scsi_dh                14882  1 dm_multipath
+bluetooth             391196  10 bnep,rfcomm
+snd_seq_midi_event     14899  1 snd_seq_midi
+crct10dif_pclmul       14289  0 
+crc32_pclmul           13113  0 
+ghash_clmulni_intel    13216  0 
+joydev                 17381  0 
+cryptd                 20359  1 ghash_clmulni_intel
+ideapad_laptop         18216  0 
+snd_rawmidi            30144  1 snd_seq_midi
+snd_seq                61560  2 snd_seq_midi_event,snd_seq_midi
+serio_raw              13462  0 
+snd_seq_device         14497  3 snd_seq,snd_rawmidi,snd_seq_midi
+sparse_keymap          13948  1 ideapad_laptop
+snd_timer              29482  2 snd_pcm,snd_seq
+mac_hid                13205  0 
+lpc_ich                21080  0 
+mei_me                 18627  0 
+bcma                   52096  3 b43,brcmsmac
+snd                    69238  21 snd_hwdep,snd_timer,snd_hda_codec_hdmi,snd_hda_codec_conexant,snd_pcm,snd_seq,snd_rawmidi,snd_hda_codec,snd_hda_intel,snd_seq_device,snd_seq_midi
+mei                    82276  1 mei_me
+soundcore              12680  1 snd
+parport_pc             32701  0 
+ppdev                  17671  0 
+lp                     17759  0 
+parport                42348  3 lp,ppdev,parport_pc
+squashfs               48362  1 
+overlayfs              27916  1 
+nls_utf8               12557  1 
+isofs                  39835  1 
+jfs                   181348  0 
+xfs                   912173  0 
+libcrc32c              12644  1 xfs
+reiserfs              246707  0 
+dm_mirror              22135  0 
+dm_region_hash         20862  1 dm_mirror
+dm_log                 18411  2 dm_region_hash,dm_mirror
+hid_generic            12548  0 
+usbhid                 52570  0 
+hid                   106148  2 hid_generic,usbhid
+radeon               1522422  3 
+i2c_algo_bit           13413  1 radeon
+psmouse               106678  0 
+ttm                    85115  1 radeon
+drm_kms_helper         53081  1 radeon
+ahci                   25819  2 
+drm                   303102  5 ttm,drm_kms_helper,radeon
+libahci                32560  1 ahci
+atl1c                  46086  0 
+video                  19476  0 

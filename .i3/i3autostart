@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# plasma
+[ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
+
+dunst -config .i3/dunstrc &>/dev/null &
+#compton --config .i3/compton.conf &>/dev/null &
+#compton -cCGfF -t-5 -l-5 -r5 -D0 -o.5 --shadow-red 1 &>/dev/null &
+unclutter -root -visible &>/dev/null &
+# xrandr --dpi 144 --output LVDS --mode 1366x768 --output HDMI-0 --mode 1920x1080 --primary --left-of LVDS
+# xrandr --dpi 108 --output LVDS --off --output HDMI-0 --mode 1920x1080 --primary --left-of LVDS
+# xrandr --output LVDS --off --output HDMI-0 --mode 1920x1080 --primary --left-of LVDS
+# xrandr --output DP-1 --mode 1920x1080
+
+# Fix keyboard repeat rate
+# xset r rate 200 50
+# disable bell
+xset -b
+# Set pointer speed
+#xset m 0 0
+#xinput --set-ptr-feedback 9 0 120 100
+# Try to disable screensavers / monitor blanking
+# setterm -blank 0 -powersave off -powerdown 0
+xset s off
+xset +fp /usr/share/fonts/terminus/
+xset -dpms
+
+# Load the correct keyboard map
+xmodmap ~/.Xmodmap
+# xmodmap -e "pointer = 1 2 3 5 4 6 7 8 9 10 11 12"
+xrdb ~/.i3/Xresources
+i3action setwall &>/dev/null &
+#xrandr --dpi 108
+hsetroot -solid `printf '#%06X\n' $(( RANDOM * 512 ))`
+# killall redshift
+redshift -l 30:114 -t 5700:3600 -m randr -g 0.8 &
+#nm-applet &
+#xautolock -time 72 -locker 'i3action locki3' &
+# i3action toggletouch
+# xinput float 14
+#sleep 5
+
+#synclient VertScrollDelta=-300
+# xrandr-invert-colors.bin -s 1
+# udiskie -f rox -t2 &>/dev/null &
+pulseaudio -k
+pulseaudio --start
+#urxvtd --quiet --opendisplay --fork
+# [[ -f ~/.aria2/aria2.session ]] || touch ~/.aria2/aria2.session
+aria2c  --conf-path=$HOME/.i3/aria2.conf -D
+fcitx -r -d
+
+#sleep 5
+#xmodmap -e "keysym Menu = Super_R" &
+# i3lock

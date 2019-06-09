@@ -1,0 +1,40 @@
+alias diff='colordiff'
+alias mount='mount |column -t'
+alias ports='netstat -tulanp'
+alias arec='arecord -f cd ~/Music/rec/`date +%s`.wav'
+alias bilirec='mpv -o Videos/bilibili/`date +%s`.ts `xsel -ob`'
+
+z() { command env LANG=zh_CN.utf8 "$@"; }
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias diff='colordiff'
+alias grep='grep -i --color=auto'
+alias fgrep='fgrep -i --color=auto'
+alias egrep='egrep -i --color=auto'
+# rm() { command rm -i "$@"; }
+# cp() { command cp -i "$@"; }
+# mv() { command mv -i "$@"; }
+
+alias cc5='mpv http://223.110.243.158/PLTV/3/224/3221227468/1.m3u8'
+alias war3='cd "/home/e788b1/Videos/Warcraft III"; LANG=zh_CN.utf8 wine war3.exe -opengl'
+alias wine='LANG=zh_CN.UTF-8 wine'
+rsyncp() { command rsync -rvh --size-only --progress "$@"; }
+rsyncp2() { command rsync -rvh --size-only --info=progress2 "$@"; }
+ytconvert() { command ffmpeg -i "$1" -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -c:a copy "$2.mp4" ; }
+alias dan2ass='python3 $GIT_REPOS/BiliDan/danmaku2ass.py'
+alias vbox='VBoxManage startvm'
+
+alias lx='xunlei-lixian-cli'
+alias setwall30='while :; do i3action setwall && sleep 30; done'
+alias vi2utf8="vim -c ':w ++enc=utf-8' -c ':q' "
+alias s2flac="split2flac -c *.jpg "
+alias avmergelistvob='printf "file '%s'\n" `pwd`/*.VOB > /tmp/avlist.txt'
+alias avmerge2='ffmpeg -f concat -safe 0 -i /tmp/avlist.txt -c copy '
+alias 7zc='LANG=C 7z '
+alias convmv2="convmv -f GBK -t utf8 --notest "
+alias xxnet='export http_proxy=http://127.0.0.1:8087 https_proxy=http://127.0.0.1:8087'
+alias xxyou-get='you-get -x 127.0.0.1:8087 '
+# alias avmerge='ffmpeg -f concat -i <(printf "file %s\n" *) -c copy '
+# alias renmp4='i=10000; for f in *.mp4; do mv "$f" ${i#1}.mp4; ((i++)); done'
+# alias renavi='i=10000; for f in *.mp4; do mv "$f" ${i#1}.mp4; ((i++)); done'
+#

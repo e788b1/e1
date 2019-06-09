@@ -1,0 +1,203 @@
+#=============================================================== Style
+#6c71c4 #d33682 #484e50 #586e75 #b492b6 #cb4b16 #E95420
+##fa545e ##fa6d76 ##fb858d ##fc9ea4 ##fdb7bb ##fecfd2 ##fee8ea
+# ubuntu color: purple #77216F p2 #5E2750 p3 #2C001E grey #AEA79F orange #E95420
+#font xft: Sans Bold 11
+font xft: xos4 Terminus bold 11
+
+# class                 border  backgr. text    indicator
+client.focused          #cb4b16 #d33682 #ffffff #484e50
+client.focused_inactive #5e2750 #5e2750 #ffffff #586e75
+client.unfocused        #283851 #283851 #dfe3ee #292d2e
+
+bar {
+        position top
+        # mode     hide
+        # strip_workspace_numbers yes
+        # tray_output primary
+        # tray_output LVDS
+        status_command py3status -c ~/.i3/py3status.conf
+        # status_command    i3status -c ~/.i3/i3status.conf
+	#
+        colors {
+                background #1995B1
+                background #073642
+                background #333333
+                statusline #eeeeee
+                separator  #073642
+
+                focused_workspace  #cb4b16 #d33682 #ffffff
+                active_workspace   #2aa198 #77216F #eeeeee
+                inactive_workspace #586e75 #2C001E #AEA79F
+    }
+}
+#===============================================================
+set $mod Mod4
+set $menu Menu
+set $nsi --no-startup-id
+# ==============================================================
+exec $nsi i3autostart
+# ==============================================================
+floating_modifier $mod
+popup_during_fullscreen smart
+# workspace_layout tabbed
+new_window pixel 3
+focus_follows_mouse  no
+# force_focus_wrapping yes
+bindsym button3 kill
+# bindsym button3 floating toggle
+bindsym --whole-window $mod+Shift+button3 kill
+bindsym $mod+Return       exec $nsi urxvt
+# bindsym $mod+Shift+Return exec $nsi lilyterm
+bindsym $mod+Shift+Return exec $nsi urxvt_scratchpad
+bindsym $mod+semicolon exec $nsi lilyterm
+bindsym $mod+comma        exec $nsi xrandr-invert-colors.bin -s 1
+bindsym $mod+period       exec $nsi xrandr-invert-colors.bin -s 0
+bindsym $mod+Shift+comma  exec $nsi xrandr-invert-colors.bin
+bindsym $mod+Shift+period exec $nsi i3action redshift
+bindsym $mod+slash        exec $nsi urxvt -e ranger
+bindsym --release Print exec $nsi i3action print focused
+bindsym --release Ctrl+Print exec $nsi i3action print select
+# bindsym Ctrl+Shift+Escape exec $nsi ksysguard
+bindsym $mod+Home exec $nsi i3action setwall
+bindsym $mod+Insert exec $nsi feh `cat /tmp/current_wallpaper_name`
+bindsym $mod+Delete exec $nsi i3action rmcurrentwall
+bindsym $mod+Escape exec $nsi urxvt -e htop
+bindsym $mod+grave  exec $nsi i3action run
+bindsym $mod+BackSpace exec $nsi i3action locki3
+bindsym $mod+Shift+BackSpace exit
+bindsym $mod+F2 border toggle
+bindsym $mod+F4 kill
+bindsym Pause kill
+bindsym $mod+F5 reload
+bindsym $mod+Shift+F5 restart
+#, exec $nsi notify-send "reload"
+bindsym $mod+F6  exec i3action toggletouch
+bindsym $mod+F9 exec $nsi urxvt -e ncmpcpp
+bindsym $mod+Shift+F10 exec $nsi i3action rmcurrentmusic
+bindsym $mod+F11 bar mode toggle
+bindsym $mod+Shift+Ctrl+Delete exec $nsi gksudo -m "shutdown -H now" "shutdown -H 0"
+bindsym $mod+Shift+Ctrl+Pause exec $nsi gksudo -m "pm-suspend" "pm-suspend"
+
+bindsym $mod+1 exec $nsi rofi -show run
+bindsym $mod+2 exec $nsi i3action search
+bindsym $mod+3 exec $nsi i3action youdao
+bindsym $mod+4 exec $nsi i3action mpc
+bindsym $mod+5 exec $nsi i3action locate
+bindsym $mod+6 exec $nsi urxvt -e i3action midi play
+bindsym $mod+Shift+6 exec $nsi i3action midi rmcurrent
+bindsym $mod+7 exec $nsi lilyterm -e "musicbox"
+bindsym $mod+8 exec $nsi i3action showtitle
+bindsym $mod+9 exec $nsi notify-send "`mpc current`"
+bindsym $mod+0 exec $nsi i3action run
+
+bindsym $mod+q workspace 1: q
+bindsym $mod+w workspace 2: w
+bindsym $mod+e workspace 3: e
+bindsym $mod+r workspace 4: r
+bindsym $mod+t workspace 5: t
+bindsym $mod+y workspace 6: y
+bindsym $mod+u workspace 7: u
+bindsym $mod+i workspace 8: i
+bindsym $mod+o workspace 9: o
+
+bindsym $mod+Shift+q move container to workspace 1: q
+bindsym $mod+Shift+w move container to workspace 2: w
+bindsym $mod+Shift+e move container to workspace 3: e
+bindsym $mod+Shift+r move container to workspace 4: r
+bindsym $mod+Shift+t move container to workspace 5: t
+bindsym $mod+Shift+y move container to workspace 6: y
+bindsym $mod+Shift+u move container to workspace 7: u
+bindsym $mod+Shift+i move container to workspace 8: i
+bindsym $mod+Shift+o move container to workspace 9: o
+
+bindsym $mod+p focus parent
+
+#bindsym $mod+a exec $nsi urxvt -e alsamixer
+bindsym $mod+a exec $nsi pavucontrol
+mode "resize" {
+        bindsym h resize shrink width  10 px or 10 ppt
+        bindsym j resize grow   height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow   width  10 px or 10 ppt
+        bindsym q      mode "default"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+s mode "resize"
+bindsym $mod+d exec $nsi urxvt -e ranger
+# bindsym $mod+d exec $nsi XDG_CURRENT_DESKTOP="KDE" dolphin
+bindsym $mod+Shift+d exec $nsi rox
+bindsym $mod+f fullscreen
+bindsym $mod+g exec $nsi google-chrome-stable
+
+bindsym $mod+space       focus mode_toggle
+bindsym $mod+Shift+space floating toggle
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+z exec $nsi urxvt -e i3get
+bindsym $mod+x exec $nsi notify-send "`pkill -en mpv`"
+bindsym $mod+Shift+x kill
+
+bindsym $mod+c layout toggle all
+bindsym $mod+v split v
+bindsym $mod+b layout stacking
+bindsym $mod+n layout tabbed
+bindsym $mod+m layout toggle split
+
+bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+Shift+Tab move container to workspace back_and_forth
+
+bindsym $mod+Shift+Left  move      workspace to output left
+bindsym $mod+Shift+Right move      workspace to output right
+bindsym $mod+Shift+Up    move      workspace to output Up
+bindsym $mod+Shift+Down  move      workspace to output Down
+bindsym $mod+Left        workspace prev
+bindsym $mod+Right       workspace next
+
+# bindsym $mod+Shift+minus move scratchpad
+# bindsym $mod+minus scratchpad show
+# bindsym $mod+equal scratchpad show, scratchpad show
+bindsym $mod+Shift+F12 move scratchpad
+bindsym $mod+F12 scratchpad show, scratchpad show
+bindsym F12 scratchpad show
+#=============================================================== FOR_WINDOW
+set $flyme floating enable,border normal
+for_window [class="^Lxappearance$"] $flyme
+#for_window [class="^Speedcrunch$"] $flyme
+for_window [class="^feh$"] $flyme
+for_window [class="^Sxiv$"] $flyme
+for_window [class="^Image Lounge$"] $flyme
+for_window [class="^mpv$"] $flyme
+for_window [class="^vlc$"] $flyme
+for_window [class="^netease-cloud-music$"] $scratchpad ,border 1pixel
+#for_window [class="^Zathura$"] $flyme
+for_window [class="^Image Lounge$"] $flyme
+for_window [class="^Pavucontrol$"] $flyme
+#for_window [class="^fontforge$"] $flyme
+# for_window [class="^dolphin$" title="(Copying.*)|(Moving.*)|(Progress Dialog)|(Creating directory)"] $flyme
+for_window [urgent=latest] focus
+focus_on_window_activation focus
+for_window [window_role="bubble"] floating enable
+for_window [window_role="pop-up|task_dialog"] floating enable
+
+set $scratchpad move scratchpad, scratchpad show, border normal
+for_window [instance="scratchpad$"] $flyme
+#
+
+#for_window [class="^.*"] border pixel 0
+gaps inner 14
+gaps outer -2
+smart_gaps on
+smart_borders on
+
+#

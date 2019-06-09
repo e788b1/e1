@@ -1,0 +1,7 @@
+slmgr.vbs /ilc c:\pkeyconfig-embedded.xrm-ms
+slmgr.vbs /ilc c:\Security-SPP-Component-SKU-Embedded-VLBA-ul.xrm-ms
+slmgr.vbs /ilc c:\Security-SPP-Component-SKU-Embedded-VLBA-ul-oob.xrm-ms
+slmgr.vbs /ipk XGY72-BRBBT-FF8MH-2GG8H-W7KCW
+slmgr.vbs /xpr
+
+dism  /online  /add-package  /packagepath:C:\lp.cab

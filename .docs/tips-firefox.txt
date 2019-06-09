@@ -1,0 +1,20 @@
+# Jerky or choppy scrolling
+
+mousewheel.min_line_scroll_amount   40
+general.smoothScroll                false
+general.smoothScroll.pages          false
+image.mem.min_discard_timeout_ms    2100000000
+image.mem.max_decoded_image_kb      512K
+
+# Acceleration
+layers.acceleration.force-enabled   ture
+
+gfx.canvas.azure.accelerated        true
+
+browser.cache.disk.enable           false
+browser.cache.memory.enable         true
+browser.cache.memory.capacity       -1
+browser.sessionstore.interval       600000
+browser.sessionstore.resume_from_crash false
+extensions.pocket.enabled           false
+

@@ -1,0 +1,15 @@
+# required by @selected
+# required by @world (argument)
+x11-misc/py3status
+media-fonts/fontawesome
+media-sound/netease-cloud-music
+dev-qt/qcef
+media-sound/jack2
+app-crypt/fcrackzip
+app-crypt/pkcrack
+x11-libs/libva
+x11-libs/libva-intel-media-driver
+media-libs/gmmlib
+x11-libs/libva-intel-driver
+app-emulation/virtualbox
+app-emulation/virtualbox-modules

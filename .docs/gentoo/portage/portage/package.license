@@ -1,0 +1,11 @@
+www-plugins/adobe-flash AdobeFlash-11.x
+www-client/google-chrome google-chrome
+app-arch/unrar unRAR
+sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE
+app-crypt/pkcrack pkcrack
+app-arch/p7zip unRAR
+sys-firmware/intel-microcode intel-ucode
+# required by google-chrome-unstable (argument)
+>=www-client/google-chrome-unstable-76.0.3783.0 google-chrome
+# required by www-plugins/chrome-binary-plugins (argument)
+>=www-plugins/chrome-binary-plugins-74.0.3729.131:stable google-chrome

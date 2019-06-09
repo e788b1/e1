@@ -1,0 +1,8 @@
+CC='clang'
+CXX='clang++'
+CFLAGS="${CFLAGS} -O4"
+CXXFLAGS="${CXXFLAGS} -O4"
+LDFLAGS="${LDFLAGS} -O4 -Wl,-plugin,/usr/lib/llvm/LLVMgold.so"
+AR='/usr/local/bin/clang-ar'
+RANLIB=':'
+NM='nm --plugin /usr/lib64/llvm/LLVMgold.so'

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+urxvt -g 86x29 -name urxvt_scratchpad $@

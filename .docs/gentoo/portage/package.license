@@ -1,0 +1,11 @@
+# required by @selected
+# required by @world (argument)
+www-plugins/adobe-flash AdobeFlash-11.x
+# required by google-chrome-unstable (argument)
+www-client/google-chrome-unstable google-chrome
+# required by app-emulation/virtualbox-bin (argument)
+app-emulation/virtualbox-bin PUEL
+# required by rar (argument)
+>=app-arch/rar-5.4.0 RAR
+# required by www-plugins/chrome-binary-plugins (argument)
+www-plugins/chrome-binary-plugins google-chrome

@@ -1,0 +1,76 @@
+#!/bin/bash
+
+url=`xsel -o`
+keyword=`echo $url | cut -d '/' -f1-3`
+
+case $keyword in
+    'http://www.bilibili.com' |\
+    'https://www.bilibili.com')
+        notify-send "Bilibili ..." "$url"
+        # cookie=`awk  '$1!="#" {print $6"="$7}' ~/Downloads/cookies.txt | sed '/^=$/d' | sed $'s/\r$//' | tr '\n' '\;'`
+        cookie=`cat ~/.bilibili.cookie`
+        # ${GIT_REPOS}/BiliDan/bilidan.py "$url" -c "$cookie" --d2aflags "text_opacity=0.2,font_face=mpv"
+        ${GIT_REPOS}/BiliDan/bilidan.py --cookie "$cookie" "$url"
+        # --d2aflags "duration_marquee=9,font_face=mpv"
+        # --source flvcd
+        [[ 1 == $? ]] && notify-send "ERROR"
+        ;;
+    'http://fscdntel-vip.115.com' |\
+    'http://vipcdntel.115.com' |\
+    'http://mzvipcdntel.115.com')
+        notify-send "$url"
+        mpv --http-header-fields='Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36 115Browser/5.2.6','Connection: keep-alive','Referer:http://115' \
+            "$url"
+        [[ 1 == $? ]] && notify-send "ERROR"
+        ;;
+    'https://github.com')
+        notify-send "git clone" "$url"
+        agit clone $url &&
+            notify-send "git cloned"
+        ;;
+    'https://500px.com')
+        # [[ 'https://500px.com' != `echo $url | cut -d '/' -f1-3` ]] &&
+        notify-send "500px is Fetching ..."
+        html=$(curl $url)
+        source=$(echo $html | grep -Po 'img .*? class="the_photo" .*? src="(.*?)"' | sed 's/.*src=//g' | sed 's/"//g')
+        name=$(echo $html | grep -Po 'meta content="(.*?)" property="og:title' | sed 's/.*meta content="//g' | sed 's/" property="og:title//g')
+        author=$(echo $html | grep -Po 'meta content="author: (.*?); ' | sed 's/meta content="author: //g' | sed 's/;//g' )
+
+        wget "$source" -O "/tmp/temp.jpg"
+
+        [[ -d ~/Pictures/500px/ ]] || mkdir -p ~/Pictures/500px/
+        targetfile="$HOME/Pictures/500px/$name@$author.jpg"
+
+        mv "/tmp/temp.jpg" "$targetfile" && feh  --bg-fill "$targetfile"
+        [[ -f $targetfile ]] && notify-send "√ $targetfile"
+        ;;
+    'https://www.youtube.com')
+        # export https_proxy="127.0.0.1:8087"
+        # export http_proxy="127.0.0.1:8087"
+        notify-send "Youtube ..." "$url"
+        youtube-dl --proxy 127.0.0.1:8087 $url -o "/home/e788b1/Videos/youtube/%(title)s-%(id)s.%(ext)s"
+        [[ 1 == $? ]] && notify-send "√ Youtube Done"
+        ;;
+    *bilibili*|*acfun.tv*|*douyu.com*|*le.com*|*letv.com*|*163.com*|*iqiyi*|*sohu*|*qq.com*|*youku*|*t.cn*)
+        notify-send "$url"
+        # cd Videos # you-get $url
+        # you-get -p "mpv" "$url"
+        # mpv $url
+        #you-get -p "mpv --no-ytdl" "$url"
+        you-get "$url"
+        # you-get -p "mpv --merge-files" "$url"
+        [[ 1 == $? ]] && notify-send "ERROR"
+        exit
+        ;;
+    curl*)
+        notify-send "curl task"
+        eval "$url" -o /home/e788b1/Videos/OBS/live-$(date +'%g%m%d%k%M%S')
+        notify-send "curl task done"
+        exit 0
+        ;;
+    *)
+        notify-send "$url"
+        mpv $url
+        [[ 1 == $? ]] && notify-send "ERROR" && exit 1
+        ;;
+esac

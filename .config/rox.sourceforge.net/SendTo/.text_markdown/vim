@@ -1,0 +1,1 @@
+urxvt -g 88x64 -name vim_scratchpad -e vim "$@"

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# urxvtc -geometry 89x32 -name urxvt_scratchpad -e vim -c"set mouse=a" "$@"
+urxvt -geometry 89x32 -name urxvt_scratchpad -e vim "$@"

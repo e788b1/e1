@@ -1,0 +1,34 @@
+# feh key configuration.
+menu_parent h Left
+menu_down   j Down
+menu_child  l Right
+menu_up     k Up
+menu_select space Return
+
+zoom_in  h a Up
+next_img j s Right space
+prev_img k d Left BackSpace
+zoom_out l f Down
+
+zoom_fit e
+
+scroll_left  H C-Left
+scroll_down  J C-Down
+scroll_up    K C-Up
+scroll_right L C-Right
+
+remove   Delete
+delete   C-d C-Delete
+
+toggle_exif E
+toggle_filenames F
+toggle_keep_vp K
+toggle_info i
+toggle_pause S
+
+# I only hit these accidentaly
+save_image
+save_filelist
+
+# This leaves some conflicts with existing default bindings, but you should
+# get the idea.  And I'm not gonna fix the conflicts, I don't use qwerty ;-)

@@ -1,0 +1,1 @@
+urxvt -g 108x55 -name mediainfo_scratchpad -hold -e mediainfo "$@"

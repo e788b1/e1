@@ -1,0 +1,158 @@
+00:00.0 Host bridge: Intel Corporation 2nd Generation Core Processor Family DRAM Controller (rev 09)
+	Subsystem: Lenovo 2nd Generation Core Processor Family DRAM Controller
+	Flags: bus master, fast devsel, latency 0
+	Capabilities: [e0] Vendor Specific Information: Len=0c <?>
+
+00:01.0 PCI bridge: Intel Corporation Xeon E3-1200/2nd Generation Core Processor Family PCI Express Root Port (rev 09) (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 24
+	Bus: primary=00, secondary=01, subordinate=06, sec-latency=0
+	I/O behind bridge: 00003000-00003fff
+	Memory behind bridge: d0200000-d11fffff
+	Prefetchable memory behind bridge: 00000000c0000000-00000000cfffffff
+	Capabilities: [88] Subsystem: Lenovo Xeon E3-1200/2nd Generation Core Processor Family PCI Express Root Port
+	Capabilities: [80] Power Management version 3
+	Capabilities: [90] MSI: Enable+ Count=1/1 Maskable- 64bit-
+	Capabilities: [a0] Express Root Port (Slot+), MSI 00
+	Capabilities: [100] Virtual Channel
+	Capabilities: [140] Root Complex Link
+	Kernel driver in use: pcieport
+
+00:16.0 Communication controller: Intel Corporation 6 Series/C200 Series Chipset Family MEI Controller #1 (rev 04)
+	Subsystem: Lenovo 6 Series/C200 Series Chipset Family MEI Controller
+	Flags: bus master, fast devsel, latency 0, IRQ 4
+	Memory at d1204000 (64-bit, non-prefetchable) [size=16]
+	Capabilities: [50] Power Management version 3
+	Capabilities: [8c] MSI: Enable- Count=1/1 Maskable- 64bit+
+
+00:1a.0 USB controller: Intel Corporation 6 Series/C200 Series Chipset Family USB Enhanced Host Controller #2 (rev 05) (prog-if 20 [EHCI])
+	Subsystem: Lenovo 6 Series/C200 Series Chipset Family USB Enhanced Host Controller
+	Flags: bus master, medium devsel, latency 0, IRQ 16
+	Memory at d120a000 (32-bit, non-prefetchable) [size=1K]
+	Capabilities: [50] Power Management version 2
+	Capabilities: [58] Debug port: BAR=1 offset=00a0
+	Capabilities: [98] PCI Advanced Features
+	Kernel driver in use: ehci-pci
+	Kernel modules: ehci_pci
+
+00:1b.0 Audio device: Intel Corporation 6 Series/C200 Series Chipset Family High Definition Audio Controller (rev 05)
+	Subsystem: Lenovo 6 Series/C200 Series Chipset Family High Definition Audio Controller
+	Flags: bus master, fast devsel, latency 0, IRQ 26
+	Memory at d1200000 (64-bit, non-prefetchable) [size=16K]
+	Capabilities: [50] Power Management version 2
+	Capabilities: [60] MSI: Enable+ Count=1/1 Maskable- 64bit+
+	Capabilities: [70] Express Root Complex Integrated Endpoint, MSI 00
+	Capabilities: [100] Virtual Channel
+	Capabilities: [130] Root Complex Link
+	Kernel driver in use: snd_hda_intel
+	Kernel modules: snd_hda_intel
+
+00:1c.0 PCI bridge: Intel Corporation 6 Series/C200 Series Chipset Family PCI Express Root Port 1 (rev b5) (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 17
+	Bus: primary=00, secondary=07, subordinate=07, sec-latency=0
+	I/O behind bridge: 00002000-00002fff
+	Memory behind bridge: d0100000-d01fffff
+	Capabilities: [40] Express Root Port (Slot+), MSI 00
+	Capabilities: [80] MSI: Enable- Count=1/1 Maskable- 64bit-
+	Capabilities: [90] Subsystem: Lenovo 6 Series/C200 Series Chipset Family PCI Express Root Port 1
+	Capabilities: [a0] Power Management version 2
+	Kernel driver in use: pcieport
+
+00:1c.1 PCI bridge: Intel Corporation 6 Series/C200 Series Chipset Family PCI Express Root Port 2 (rev b5) (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 16
+	Bus: primary=00, secondary=08, subordinate=08, sec-latency=0
+	Memory behind bridge: d0000000-d00fffff
+	Capabilities: [40] Express Root Port (Slot+), MSI 00
+	Capabilities: [80] MSI: Enable- Count=1/1 Maskable- 64bit-
+	Capabilities: [90] Subsystem: Lenovo 6 Series/C200 Series Chipset Family PCI Express Root Port 2
+	Capabilities: [a0] Power Management version 2
+	Kernel driver in use: pcieport
+
+00:1d.0 USB controller: Intel Corporation 6 Series/C200 Series Chipset Family USB Enhanced Host Controller #1 (rev 05) (prog-if 20 [EHCI])
+	Subsystem: Lenovo 6 Series/C200 Series Chipset Family USB Enhanced Host Controller
+	Flags: bus master, medium devsel, latency 0, IRQ 23
+	Memory at d1209000 (32-bit, non-prefetchable) [size=1K]
+	Capabilities: [50] Power Management version 2
+	Capabilities: [58] Debug port: BAR=1 offset=00a0
+	Capabilities: [98] PCI Advanced Features
+	Kernel driver in use: ehci-pci
+	Kernel modules: ehci_pci
+
+00:1f.0 ISA bridge: Intel Corporation HM65 Express Chipset Family LPC Controller (rev 05)
+	Subsystem: Lenovo HM65 Express Chipset Family LPC Controller
+	Flags: bus master, medium devsel, latency 0
+	Capabilities: [e0] Vendor Specific Information: Len=0c <?>
+
+00:1f.2 SATA controller: Intel Corporation 6 Series/C200 Series Chipset Family 6 port SATA AHCI Controller (rev 05) (prog-if 01 [AHCI 1.0])
+	Subsystem: Lenovo 6 Series/C200 Series Chipset Family 6 port SATA AHCI Controller
+	Flags: bus master, 66MHz, medium devsel, latency 0, IRQ 25
+	I/O ports at 4048 [size=8]
+	I/O ports at 405c [size=4]
+	I/O ports at 4040 [size=8]
+	I/O ports at 4058 [size=4]
+	I/O ports at 4020 [size=32]
+	Memory at d1208000 (32-bit, non-prefetchable) [size=2K]
+	Capabilities: [80] MSI: Enable+ Count=1/1 Maskable- 64bit-
+	Capabilities: [70] Power Management version 3
+	Capabilities: [a8] SATA HBA v1.0
+	Capabilities: [b0] PCI Advanced Features
+	Kernel driver in use: ahci
+	Kernel modules: ahci
+
+00:1f.3 SMBus: Intel Corporation 6 Series/C200 Series Chipset Family SMBus Controller (rev 05)
+	Subsystem: Lenovo 6 Series/C200 Series Chipset Family SMBus Controller
+	Flags: medium devsel, IRQ 11
+	Memory at d1206000 (64-bit, non-prefetchable) [size=256]
+	I/O ports at 4000 [size=32]
+
+01:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Robson CE [Radeon HD 6370M/7370M] (prog-if 00 [VGA controller])
+	Subsystem: Lenovo Robson CE [Radeon HD 6370M/7370M]
+	Flags: bus master, fast devsel, latency 0, IRQ 4
+	Memory at c0000000 (64-bit, prefetchable) [size=256M]
+	Memory at d0200000 (64-bit, non-prefetchable) [size=128K]
+	I/O ports at 3000 [size=256]
+	Expansion ROM at d0240000 [disabled] [size=128K]
+	Capabilities: [50] Power Management version 3
+	Capabilities: [58] Express Legacy Endpoint, MSI 00
+	Capabilities: [a0] MSI: Enable- Count=1/1 Maskable- 64bit+
+	Capabilities: [100] Vendor Specific Information: ID=0001 Rev=1 Len=010 <?>
+
+01:00.1 Audio device: Advanced Micro Devices, Inc. [AMD/ATI] Cedar HDMI Audio [Radeon HD 5400/6300 Series]
+	Subsystem: Lenovo Cedar HDMI Audio [Radeon HD 5400/6300 Series]
+	Flags: bus master, fast devsel, latency 0, IRQ 27
+	Memory at d0220000 (64-bit, non-prefetchable) [size=16K]
+	Capabilities: [50] Power Management version 3
+	Capabilities: [58] Express Legacy Endpoint, MSI 00
+	Capabilities: [a0] MSI: Enable+ Count=1/1 Maskable- 64bit+
+	Capabilities: [100] Vendor Specific Information: ID=0001 Rev=1 Len=010 <?>
+	Kernel driver in use: snd_hda_intel
+	Kernel modules: snd_hda_intel
+
+07:00.0 Ethernet controller: Qualcomm Atheros AR8152 v2.0 Fast Ethernet (rev c1)
+	Subsystem: Lenovo AR8152 v2.0 Fast Ethernet
+	Flags: bus master, fast devsel, latency 0, IRQ 28
+	Memory at d0100000 (64-bit, non-prefetchable) [size=256K]
+	I/O ports at 2000 [size=128]
+	Capabilities: [40] Power Management version 3
+	Capabilities: [48] MSI: Enable+ Count=1/1 Maskable- 64bit+
+	Capabilities: [58] Express Endpoint, MSI 00
+	Capabilities: [6c] Vital Product Data
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [180] Device Serial Number ff-02-d1-82-b8-70-f4-ff
+	Kernel driver in use: atl1c
+	Kernel modules: atl1c
+
+08:00.0 Network controller: Broadcom Corporation BCM4313 802.11bgn Wireless Network Adapter (rev 01)
+	Subsystem: Broadcom Corporation BCM4313 802.11bgn Wireless Network Adapter
+	Flags: bus master, fast devsel, latency 0, IRQ 17
+	Memory at d0000000 (64-bit, non-prefetchable) [size=16K]
+	Capabilities: [40] Power Management version 3
+	Capabilities: [58] Vendor Specific Information: Len=78 <?>
+	Capabilities: [48] MSI: Enable- Count=1/1 Maskable- 64bit+
+	Capabilities: [d0] Express Endpoint, MSI 00
+	Capabilities: [100] Advanced Error Reporting
+	Capabilities: [13c] Virtual Channel
+	Capabilities: [160] Device Serial Number 00-00-4e-ff-ff-36-90-00
+	Capabilities: [16c] Power Budgeting <?>
+	Kernel driver in use: bcma-pci-bridge
+	Kernel modules: bcma
+

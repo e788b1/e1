@@ -1,0 +1,163 @@
+#!/bin/bash
+
+action=$1
+value0=$2
+value1=$3
+
+browser="xdg-open"
+terminal="urxvt_scratchpad"
+
+DMENURC="-fn "Mono:pixelsize=16" -nb #1995B1 -nf #ffffff -sb #cb4b16 -sf #ffffff -b "
+DMENU="dmenu $DMENURC"
+
+case "$action" in
+    run)
+        dmenu_run $DMENURC -p 'run' -i -f
+        ;;
+    runapp)
+        i3-dmenu-desktop --dmenu="$DMENU -i -p RUN"
+        ;;
+    redshift)
+        if [[ 0 == `pgrep -cx redshift` ]] ; then
+            notify-send "redshift on"
+            redshift -l 30:114 -t 5700:3600 -m randr -g 0.8 &
+        else
+            killall redshift
+            notify-send "redshift off"
+        fi
+        ;;
+    locki3)
+        scrot /tmp/lockd_screen.png
+        # mogrify -scale 10% -scale 1000% /tmp/lockd_screen.png
+        convert /tmp/lockd_screen.png -blur 0x5 /tmp/lockd_screen_blur.png
+        i3lock -p win -i /tmp/lockd_screen_blur.png
+        sleep 60; pgrep i3lock && xset dpms force off
+        ;;
+    winmenu)
+        echo -ne "i3-ipc\x0\x0\x0\x0\x4\x0\x0\x0" |
+            socat STDIO UNIX-CLIENT:`i3 --get-socketpath` |
+            tail -c +15 |
+            sed -e 's/"id":/\n"id":/g' |
+            sed -ne 's/.*"name":"\([^"]\+\)".*"window":\([0-9]\+\).*/\1 \2/p' |
+            $DMENU -i -l 7 |
+            sed -ne 's/.* \([0-9]*\)/[id=\1] focus/p' |
+            (read cmd; i3-msg "$cmd")
+        ;;
+    search)
+        clipboard=$(xsel -o)
+        echo $clipboard
+        input="$(echo $clipboard | $DMENU -p "SEARCH":)"
+        case $input in
+            '')    exit 1 ;;
+            ';')   result=http://www.baidu.com/s?wd=$clipboard ;;
+            ';;')  result=http://www.cilibaba.com/search/$clipboard ;;
+            'y;')  result=http://www.soku.com/search_video/q_$clipboard ;;
+            'd;')  result=http://www.douban.com/search?q=$clipboard ;;
+            # 'd;')  result=https://duckduckgo.com/?q=$clipboard ;;
+            'b;')  result=http://www.bilibili.com/search?keyword=$clipboard ;;
+            'a;')  result=http://search.aol.com/aol/search?q=$clipboard ;;
+            'g;')  result=https://www.google.com/#q=$clipboard ;;
+            'w;')  result=http://en.wikipedia.org/wiki/$clipboard ;;
+            'bt;')  result=http://www.btcherry.net/search?keyword=$clipboard ;;
+            'z;')  result=http://zh.wikipedia.org/wiki/$clipboard ;;
+            'w;'*) result=http://en.wikipedia.org/wiki/$(echo $input | cut -b3-) ;;
+            ';'*)  result=http://www.baidu.com/s?wd=$(echo $input | cut -b2-) ;;
+            *)     result=https://www.bing.com/search?q=$input ;;
+        esac
+        $browser "$result"
+        ;;
+    showtitle)
+        id=$(xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print $NF}')
+        title=$(xprop -id $id | awk '/_NET_WM_NAME/{$1=$2="";print}' | cut -d'"' -f2)
+        notify-send "$title"
+        ;;
+    setwall)
+        wall_dir="${HOME}/Pictures/Wallpapers"
+        wall_lst="$wall_dir""/wall.lst"
+        [[ -f "$wall_lst" ]] || find -L "$wall_dir" -iregex '.*\(png\|jpg\)$' > "$wall_lst"
+        wall="`cat "$wall_lst" |  shuf -n1`"
+        cur_wall="/tmp/current_wallpaper.png"
+        echo "$wall" > /tmp/current_wallpaper_name
+
+        img_h=`identify -format '%h' "$wall"`
+        if [[ $img_h -gt 1080 ]]; then
+            img_w=`identify -format '%w' "$wall"`
+            if [[ $img_h -gt $img_w ]]; then
+                # convert "$wall" -rotate 90 "$cur_wall"
+                # feh --bg-max "$cur_wall"
+                convert "$wall" -resize x1080 "$cur_wall"
+                feh --bg-tile "$cur_wall"
+            else
+                feh --bg-fill "$wall"
+            fi
+        else
+            # feh --bg-center "$wall" ||
+            feh --bg-tile "$wall" ||
+                hsetroot -solid `printf '#%06X\n' $((($RANDOM + 1) * 512 -1))`
+        fi
+
+        # feh --bg-fill "$wall" || hsetroot -solid `printf '#%06X\n' $((($RANDOM + 1) * 512 -1))`
+        # remove entry in list
+        sed -i \\%"$wall"%d "$wall_lst"
+        ;;
+    rmcurrentwall)
+        [[ -d ~/.trash ]] || mkdir ~/.trash
+        currentwall=`cat /tmp/current_wallpaper_name`
+        mv -b "$currentwall" ~/.trash/ #&& notify-send "trashed" "$currentwall"
+        #gvfs-trash "$currentwall" #&& notify-send "trashed" "$currentwall"
+        i3action setwall
+        ;;
+    locate)
+        input="$(xsel -o | $DMENU -p "locate":)"
+        echo $input
+        if [ "$input" != '' ]
+        then
+            result="$(echo "$input" | locate -l 200 -e -r "$input" | $DMENU -l 12 -p "search result:" )"
+            [[ -f $result ]] && xdg-open "$result"
+        fi
+        ;;
+    youdao)
+        # set -e
+        word="`xsel -o`"
+        xml="`curl -s  http://dict.youdao.com/fsearch?q=$word`"
+        xml=`echo "$xml" | sed 's/<!\[CDATA\[//g' | sed 's/\]\]>//g'`
+        key="`echo "$xml" | grep -oPm1 "(?<=<return-phrase>)[^<]+"`"
+        symbol="`echo "$xml" | grep -oPm1 "(?<=<phonetic-symbol>)[^<]+"`"
+        content="`echo "$xml" | grep -oPm1 "(?<=<content>)[^<]+"`"
+        value0="`echo "$xml" | grep -oPm1 "(?<=<value0>)[^<]+"`"
+        dict="$key [$symbol]\n$content\n$value0"
+        result="`echo -e $dict | $DMENU -l 7 -p "youdao":`"
+        [[ "" == $result ]] && exit 1
+        [[ "'" == $result ]] && exit 1
+        echo $result | xsel -i
+        i3action youdao
+        ;;
+    toggletouch)
+        synclient TouchpadOff=$(synclient | awk '/TouchpadOff/ {print ($3+1)%2}')
+        ;;
+    mpc)
+        set -e
+        # Get the current playlist
+        format="%artist% - %title%"
+        playlist="$(mpc playlist -f "$format")"
+        # Pipe the playlist to dmenu, catch name
+        name="$(echo "$playlist" | $DMENU -l 21 -p "MPC")"
+        # Get the playlist position of the name with sed
+        songnum="$(echo "$playlist" | sed -n "/${name}/=")"
+        # Play the song
+        mpc play $songnum
+        ;;
+    rmcurrentmusic)
+        currentmusic="$(find Music/ -name *"`mpc current | sed 's#.*- ##'`"* -name *"`mpc current | sed 's# -.*##'`"*)"
+        gvfs-trash "$currentmusic" && notify-send "trashed" "$currentmusic"
+        ;;
+    print)
+        case "$value0" in
+            fullscreen) scrot -e 'mv $f /tmp/ '    ;;
+            focused)    scrot -u -e 'mv $f /tmp/ ' ;;
+            select)     scrot -s -e 'mv $f /tmp/ && feh /tmp/$f' ;;
+            *);;
+        esac
+        ;;
+    # *);;
+esac

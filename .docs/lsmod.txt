@@ -1,0 +1,203 @@
+Module                  Size  Used by
+uinput                 20480  1
+cmac                   16384  1
+ecb                    16384  2
+squashfs               49152  1
+bnep                   20480  2
+arc4                   16384  2
+btusb                  45056  0
+btrtl                  16384  1 btusb
+btbcm                  16384  1 btusb
+btintel                16384  1 btusb
+brcmsmac              536576  0
+bluetooth             520192  34 bnep,btbcm,btrtl,btusb,btintel
+x86_pkg_temp_thermal    16384  0
+cordic                 16384  1 brcmsmac
+brcmutil               16384  1 brcmsmac
+b43                   229376  0
+coretemp               16384  0
+kvm_intel             192512  0
+uvcvideo               90112  0
+kvm                   565248  1 kvm_intel
+mac80211              589824  2 b43,brcmsmac
+videobuf2_vmalloc      16384  1 uvcvideo
+videobuf2_memops       16384  1 videobuf2_vmalloc
+videobuf2_v4l2         24576  1 uvcvideo
+videobuf2_core         40960  2 uvcvideo,videobuf2_v4l2
+cfg80211              569344  3 b43,brcmsmac,mac80211
+snd_hda_codec_hdmi     45056  1
+snd_hda_codec_conexant    24576  1
+videodev              167936  3 uvcvideo,videobuf2_core,videobuf2_v4l2
+snd_hda_codec_generic    73728  1 snd_hda_codec_conexant
+ssb                    69632  1 b43
+radeon               1507328  3
+rfkill                 24576  3 cfg80211,bluetooth
+snd_hda_intel          36864  4
+iTCO_wdt               16384  0
+iTCO_vendor_support    16384  1 iTCO_wdt
+mmc_core              131072  2 b43,ssb
+snd_hda_codec         126976  4 snd_hda_codec_hdmi,snd_hda_codec_conexant,snd_hda_codec_generic,snd_hda_intel
+ttm                    94208  1 radeon
+snd_hda_core           81920  5 snd_hda_codec_hdmi,snd_hda_codec_conexant,snd_hda_codec_generic,snd_hda_codec,snd_hda_intel
+drm_kms_helper        147456  1 radeon
+irqbypass              16384  1 kvm
+crc32c_intel           24576  0
+drm                   356352  6 ttm,drm_kms_helper,radeon
+syscopyarea            16384  1 drm_kms_helper
+sysfillrect            16384  1 drm_kms_helper
+ghash_clmulni_intel    16384  0
+snd_hwdep              16384  1 snd_hda_codec
+sysimgblt              16384  1 drm_kms_helper
+fb_sys_fops            16384  1 drm_kms_helper
+cryptd                 20480  1 ghash_clmulni_intel
+snd_pcm               102400  4 snd_hda_codec_hdmi,snd_hda_codec,snd_hda_intel,snd_hda_core
+snd_timer              32768  1 snd_pcm
+lpc_ich                24576  0
+serio_raw              16384  0
+pcspkr                 16384  0
+i2c_i801               20480  0
+bcma                   53248  2 b43,brcmsmac
+snd                    81920  16 snd_hwdep,snd_timer,snd_hda_codec_hdmi,snd_hda_codec_conexant,snd_pcm,snd_hda_codec_generic,snd_hda_codec,snd_hda_intel
+mfd_core               16384  1 lpc_ich
+soundcore              16384  1 snd
+video                  40960  0
+xts                    16384  0
+gf128mul               16384  1 xts
+cbc                    16384  0
+sha256_generic         20480  0
+iscsi_tcp              20480  0
+libiscsi_tcp           24576  1 iscsi_tcp
+libiscsi               53248  2 libiscsi_tcp,iscsi_tcp
+scsi_transport_iscsi    98304  2 iscsi_tcp,libiscsi
+vmxnet3                57344  0
+virtio_net             28672  0
+virtio_ring            24576  1 virtio_net
+virtio                 16384  1 virtio_net
+tg3                   159744  0
+libphy                 49152  1 tg3
+sky2                   61440  0
+r8169                  81920  0
+pcnet32                45056  0
+mii                    16384  2 r8169,pcnet32
+igb                   192512  0
+ptp                    20480  2 igb,tg3
+pps_core               20480  1 ptp
+dca                    16384  1 igb
+i2c_algo_bit           16384  2 igb,radeon
+i2c_core               65536  7 drm,igb,i2c_i801,drm_kms_helper,i2c_algo_bit,radeon,videodev
+e1000                 139264  0
+bnx2                   81920  0
+atl1c                  49152  0
+fuse                   98304  3
+xfs                   937984  0
+nfs                   237568  0
+lockd                  73728  1 nfs
+grace                  16384  1 lockd
+sunrpc                290816  2 nfs,lockd
+fscache                61440  1 nfs
+jfs                   172032  0
+reiserfs              233472  0
+btrfs                 983040  0
+ext4                  565248  2
+jbd2                  102400  1 ext4
+ext2                   73728  0
+mbcache                16384  4 ext2,ext4
+linear                 16384  0
+raid10                 45056  0
+raid1                  36864  0
+raid0                  20480  0
+dm_raid                28672  0
+raid456               102400  1 dm_raid
+async_raid6_recov      20480  1 raid456
+async_memcpy           16384  2 raid456,async_raid6_recov
+libcrc32c              16384  2 xfs,raid456
+async_pq               16384  2 raid456,async_raid6_recov
+async_xor              16384  3 async_pq,raid456,async_raid6_recov
+xor                    24576  2 btrfs,async_xor
+async_tx               16384  5 async_pq,raid456,async_xor,async_memcpy,async_raid6_recov
+raid6_pq              102400  4 async_pq,raid456,btrfs,async_raid6_recov
+dm_snapshot            40960  0
+dm_bufio               28672  1 dm_snapshot
+dm_crypt               24576  0
+dm_mirror              24576  0
+dm_region_hash         20480  1 dm_mirror
+dm_log                 20480  2 dm_region_hash,dm_mirror
+dm_mod                110592  6 dm_raid,dm_log,dm_mirror,dm_bufio,dm_crypt,dm_snapshot
+firewire_core          65536  0
+crc_itu_t              16384  1 firewire_core
+sl811_hcd              24576  0
+xhci_pci               16384  0
+xhci_hcd              180224  1 xhci_pci
+usb_storage            69632  0
+aic94xx                86016  0
+libsas                 73728  1 aic94xx
+lpfc                  643072  0
+qla2xxx               630784  0
+megaraid_sas          126976  0
+megaraid_mbox          36864  0
+megaraid_mm            20480  1 megaraid_mbox
+aacraid               106496  0
+sx8                    24576  0
+hpsa                   98304  0
+cciss                 118784  0
+3w_9xxx                45056  0
+3w_xxxx                36864  0
+3w_sas                 28672  0
+mptsas                 61440  0
+scsi_transport_sas     45056  4 hpsa,libsas,mptsas,aic94xx
+mptfc                  24576  0
+scsi_transport_fc      61440  3 lpfc,qla2xxx,mptfc
+mptspi                 24576  0
+mptscsih               40960  3 mptfc,mptsas,mptspi
+mptbase               102400  4 mptfc,mptsas,mptspi,mptscsih
+imm                    20480  0
+parport                49152  1 imm
+sym53c8xx              81920  0
+initio                 28672  0
+arcmsr                 49152  0
+aic7xxx               122880  0
+aic79xx               131072  0
+scsi_transport_spi     32768  4 mptspi,sym53c8xx,aic79xx,aic7xxx
+sr_mod                 24576  0
+cdrom                  57344  1 sr_mod
+sg                     36864  0
+sd_mod                 49152  3
+pdc_adma               16384  0
+sata_inic162x          20480  0
+sata_mv                32768  0
+ata_piix               36864  0
+ahci                   36864  2
+libahci                32768  1 ahci
+sata_qstor             16384  0
+sata_vsc               16384  0
+sata_uli               16384  0
+sata_sis               16384  0
+sata_sx4               20480  0
+sata_nv                28672  0
+sata_via               20480  0
+sata_svw               16384  0
+sata_sil24             20480  0
+sata_sil               16384  0
+sata_promise           20480  0
+pata_via               16384  0
+pata_jmicron           16384  0
+pata_marvell           16384  0
+pata_sis               20480  1 sata_sis
+pata_netcell           16384  0
+pata_pdc202xx_old      16384  0
+pata_atiixp            16384  0
+pata_amd               20480  0
+pata_ali               16384  0
+pata_it8213            16384  0
+pata_pcmcia            20480  0
+pata_serverworks       16384  0
+pata_oldpiix           16384  0
+pata_artop             16384  0
+pata_it821x            20480  0
+pata_hpt3x2n           16384  0
+pata_hpt3x3            16384  0
+pata_hpt37x            20480  0
+pata_hpt366            16384  0
+pata_cmd64x            16384  0
+pata_sil680            16384  0
+pata_pdc2027x          16384  0

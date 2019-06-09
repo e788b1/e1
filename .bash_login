@@ -1,0 +1,7 @@
+# Auto startx depending on the VT
+# if [[ -z "$DISPLAY" && $(id -u) -ge 1000 ]] ; then
+    # TTY=$(tty)
+    # [[ "${TTY/tty}" != "$TTY" && "${TTY:8:1}" = "3" ]] &&
+        # startx 1>~/.log/xsession-errors 2>&1 &
+    # unset TTY
+# fi

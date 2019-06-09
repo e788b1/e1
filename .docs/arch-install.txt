@@ -1,0 +1,44 @@
+lsblk
+parted /dev/sda
+(parted) mklabel gpt
+(parted) mkpart ESP fat32 1MiB 513MiB
+(parted) set 1 boot on
+(parted) mkpart primary ext4 513MiB 100%
+(parted) quit
+
+mkfs.fat -F32 /dev/sda1
+mkfs.ext4 /dev/sda2
+
+mount /dev/sda2 /mnt
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot
+
+vi /etc/pacman.d/mirrorlist
+pacstrap /mnt base base-devel
+genfstab -p /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+
+echo computer_name > /etc/hostname
+ln -vfs /usr/share/zoneinfo/zone/subzone /etc/localtime
+vi /etc/locale.gen
+locale-gen
+echo LANG=your_locale > /etc/locale.conf
+mkinitcpio -p linux
+
+pacman -S grub os-prober
+grub-install --recheck /dev/sda
+#grub-install --target=x86_64-efi --efi-directory=/boot
+grub-mkconfig -o /boot/grub/grub.cfg
+passwd
+
+pacman -S grml-zsh-config vim
+pacman -S xorg-xinit xorg-server i3
+systemctl enable dhcpcd
+useradd -m -G wheel -s /bin/bash arch
+passwd arch
+
+# pacman -S plasma-meta sudo xfce4
+
+exit
+umount -R /mnt
+
