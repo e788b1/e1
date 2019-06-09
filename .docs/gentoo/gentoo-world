@@ -38,6 +38,7 @@ dev-vcs/git
 lxde-base/lxappearance
 lxde-base/lxmenu-data
 media-fonts/source-han-sans
+media-fonts/source-pro
 media-fonts/symbola
 media-fonts/terminus-font
 media-fonts/wqy-bitmapfont

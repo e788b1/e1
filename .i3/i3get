@@ -4,17 +4,6 @@ url=`xsel -o`
 keyword=`echo $url | cut -d '/' -f1-3`
 
 case $keyword in
-    'http://www.bilibili.com' |\
-    'https://www.bilibili.com')
-        notify-send "Bilibili ..." "$url"
-        # cookie=`awk  '$1!="#" {print $6"="$7}' ~/Downloads/cookies.txt | sed '/^=$/d' | sed $'s/\r$//' | tr '\n' '\;'`
-        cookie=`cat ~/.bilibili.cookie`
-        # ${GIT_REPOS}/BiliDan/bilidan.py "$url" -c "$cookie" --d2aflags "text_opacity=0.2,font_face=mpv"
-        ${GIT_REPOS}/BiliDan/bilidan.py --cookie "$cookie" "$url"
-        # --d2aflags "duration_marquee=9,font_face=mpv"
-        # --source flvcd
-        [[ 1 == $? ]] && notify-send "ERROR"
-        ;;
     'http://fscdntel-vip.115.com' |\
     'http://vipcdntel.115.com' |\
     'http://mzvipcdntel.115.com')
@@ -57,7 +46,7 @@ case $keyword in
         # you-get -p "mpv" "$url"
         # mpv $url
         #you-get -p "mpv --no-ytdl" "$url"
-        you-get "$url"
+        mpv "$url"
         # you-get -p "mpv --merge-files" "$url"
         [[ 1 == $? ]] && notify-send "ERROR"
         exit
