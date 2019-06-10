@@ -15,7 +15,9 @@ alias egrep='egrep -i --color=auto'
 # cp() { command cp -i "$@"; }
 # mv() { command mv -i "$@"; }
 
-alias cc5='mpv http://223.110.243.158/PLTV/3/224/3221227468/1.m3u8'
+alias cc1='mpv rtsp://113.136.42.45:554/PLTV/88888888/224/3221226087/10000100000000060000000001759104_0.smil'
+alias cc2='mpv rtsp://113.136.42.42:554/PLTV/88888888/224/3221226134/10000100000000060000000001794850_0.smil'
+alias cc5='mpv rtsp://113.136.42.39:554/PLTV/88888888/224/3221226039/10000100000000060000000001598747_0.smil'
 alias war3='cd "/home/e788b1/Videos/Warcraft III"; LANG=zh_CN.utf8 wine war3.exe -opengl'
 alias wine='LANG=zh_CN.UTF-8 wine'
 rsyncp() { command rsync -rvh --size-only --progress "$@"; }
