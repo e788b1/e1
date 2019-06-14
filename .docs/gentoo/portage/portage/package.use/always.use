@@ -1,6 +1,6 @@
 ## config
 
-*/* alsa caps bluetooth cairo cjk consolekit dbus
+*/* alsa caps bluetooth cairo consolekit dbus
 */* ffmpeg flac fontconfig glamor
 */* icu jack jpeg lcms lzma mp3
 */* ogg opengl perl png policykit python pulseaudio
@@ -41,9 +41,11 @@ media-libs/libpng apng
 dev-db/sqlite secure-delete
 media-libs/libvpx svc postproc
 dev-libs/libpcre2 pcre16
-# required by x11-misc/qcomicbook-0.9.1::gentoo
 # required by x11-misc/qcomicbook (argument)
->=app-text/poppler-0.74.0 qt5
-# required by x11-misc/pcmanfm-1.2.5::gentoo
+app-text/poppler qt5
 # required by x11-misc/pcmanfm (argument)
->=x11-libs/libfm-1.2.5 gtk
+x11-libs/libfm gtk
+# required by sys-power/suspend (argument)
+dev-libs/libgcrypt static-libs
+dev-libs/libgpg-error static-libs
+dev-libs/lzo static-libs

@@ -37,11 +37,18 @@ dev-util/android-tools
 dev-vcs/git
 lxde-base/lxappearance
 lxde-base/lxmenu-data
-media-fonts/source-han-sans
-media-fonts/source-pro
+media-fonts/arphicfonts
+media-fonts/dejavu
+media-fonts/efont-unicode
+media-fonts/fontawesome
+media-fonts/liberation-fonts
+media-fonts/monafont
+media-fonts/powerline-symbols
+media-fonts/stix-fonts
 media-fonts/symbola
 media-fonts/terminus-font
-media-fonts/wqy-bitmapfont
+media-fonts/ubuntu-font-family
+media-fonts/unifont
 media-gfx/feh
 media-gfx/imagemagick
 media-gfx/scrot
@@ -63,7 +70,6 @@ net-misc/aria2
 net-misc/dhcpcd
 net-misc/ntp
 net-misc/youtube-dl
-net-wireless/aircrack-ng
 net-wireless/bluez
 net-wireless/iw
 net-wireless/wpa_supplicant
@@ -85,6 +91,7 @@ sys-kernel/gentoo-sources
 sys-kernel/linux-firmware
 sys-power/acpid
 sys-power/pm-utils
+sys-power/suspend
 sys-process/atop
 sys-process/htop
 sys-process/lsof

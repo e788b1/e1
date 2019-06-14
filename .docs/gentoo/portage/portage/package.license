@@ -9,3 +9,7 @@ sys-firmware/intel-microcode intel-ucode
 >=www-client/google-chrome-unstable-76.0.3783.0 google-chrome
 # required by www-plugins/chrome-binary-plugins (argument)
 >=www-plugins/chrome-binary-plugins-74.0.3729.131:stable google-chrome
+# required by corefonts (argument)
+>=media-fonts/corefonts-1-r7 MSttfEULA
+# required by media-fonts/efont-unicode (argument)
+>=media-fonts/efont-unicode-0.4.2-r1 BAEKMUK free-noncomm

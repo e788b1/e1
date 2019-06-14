@@ -25,8 +25,8 @@
 !.config/mimeapps.list
 !.config/mpv
 !.config/mpv/input.conf
-!.config/mpv/lua-settings
-!.config/mpv/lua-settings/*
+!.config/mpv/script-opts
+!.config/mpv/script-opts/*
 !.config/mpv/mpv.conf
 !.config/mpv/scripts
 !.config/mpv/scripts/*

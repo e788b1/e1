@@ -185,8 +185,8 @@ for_window [class="^Image Lounge$"] $flyme
 for_window [class="^Pavucontrol$"] $flyme
 #for_window [class="^fontforge$"] $flyme
 # for_window [class="^dolphin$" title="(Copying.*)|(Moving.*)|(Progress Dialog)|(Creating directory)"] $flyme
-for_window [urgent=latest] focus
-focus_on_window_activation focus
+#for_window [urgent=latest] focus
+#focus_on_window_activation focus
 for_window [window_role="bubble"] floating enable
 for_window [window_role="pop-up|task_dialog"] floating enable
 
