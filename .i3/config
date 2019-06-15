@@ -3,7 +3,7 @@
 ##fa545e ##fa6d76 ##fb858d ##fc9ea4 ##fdb7bb ##fecfd2 ##fee8ea
 # ubuntu color: purple #77216F p2 #5E2750 p3 #2C001E grey #AEA79F orange #E95420
 #font xft: Sans Bold 11
-font xft: xos4 Terminus bold 11
+font xft:Mono bold 11
 
 # class                 border  backgr. text    indicator
 client.focused          #cb4b16 #d33682 #ffffff #484e50

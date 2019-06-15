@@ -38,12 +38,10 @@ dev-vcs/git
 lxde-base/lxappearance
 lxde-base/lxmenu-data
 media-fonts/arphicfonts
-media-fonts/dejavu
-media-fonts/efont-unicode
 media-fonts/fontawesome
 media-fonts/liberation-fonts
-media-fonts/monafont
-media-fonts/powerline-symbols
+media-fonts/source-han-sans
+media-fonts/source-pro
 media-fonts/stix-fonts
 media-fonts/symbola
 media-fonts/terminus-font

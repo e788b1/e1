@@ -1,8 +1,7 @@
 ! Xresources
 Xcursor.size: 16
 !URxvt*font:   9x15, xft:xos4 Terminus-10, xft:WenQuanYi WenQuanYi Bitmap Song-10,xft:Symbola
-!URxvt*font:   xft:xos4 Terminus-12, xft:WenQuanYi WenQuanYi Bitmap Song-8,xft:Symbola
-URxvt*font:   xft:xos4 Terminus-12, xft:AR PL UMing CN-9,xft:Symbola
+URxvt*font:   xft:xos4 Terminus-12,xft:AR PL UMing CN-9,xft:Symbola
 URxvt.preeditType:Root
 
 URxvt.termName    : rxvt-256color
