@@ -43,7 +43,7 @@ redshift -l 30:114 -t 5700:3600 -m randr -g 0.8 &
 #synclient VertScrollDelta=-300
 # xrandr-invert-colors.bin -s 1
 # udiskie -f rox -t2 &>/dev/null &
-pulseaudio -k
+#pulseaudio -k
 pulseaudio --start
 #urxvtd --quiet --opendisplay --fork
 # [[ -f ~/.aria2/aria2.session ]] || touch ~/.aria2/aria2.session

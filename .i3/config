@@ -175,6 +175,7 @@ set $flyme floating enable,border normal
 for_window [class="^Lxappearance$"] $flyme
 #for_window [class="^Speedcrunch$"] $flyme
 for_window [class="^feh$"] $flyme
+for_window [class="^qjackctl$"] $flyme
 for_window [class="^Sxiv$"] $flyme
 for_window [class="^Image Lounge$"] $flyme
 for_window [class="^mpv$"] $flyme

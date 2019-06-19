@@ -1,0 +1,21 @@
+#<fs>       <mountpoint>   <type>   <opts>                     <dump/pass>
+/dev/nvme0n1p1  /boot      vfat     noauto,noatime             1 2
+/dev/nvme0n1p2  /          ext4     defaults,noatime           0 1
+/dev/nvme0n1p3  /home      ext4     defaults,noatime           0 2
+/dev/sda4       /home/e788b1/Downloads  ntfs-3g    uid=1000,gid=100,dmask=077,fmask=177,utf8    0 0
+#/dev/sda4       /home/e788b1/Downloads  exfat    uid=1000,gid=100,dmask=077,fmask=177,utf8    0 0
+#/dev/sda3       /home/xwga/Downloads  ntfs-3g    uid=xwga,gid=users,dmask=022,fmask=122,utf8    0 0
+#/dev/sdb1       /data      ext4     noauto,noatime             0 0
+tmpfs           /tmp       tmpfs    noatime,nodiratime,size=8G 0 0
+tmpfs           /home/e788b1/.cache       tmpfs    noatime,nodiratime,size=8G 0 0
+tmpfs           /home/e788b1/.thumbnails  tmpfs    noatime,nodiratime,size=2G 0 0
+/home/portage/squashfs/gentoo-current.xz.sqfs /usr/portage squashfs loop,nodev,noexec 0 0
+
+# /dev/sda3       /home/xwga/Downloads  ntfs-3g    defaults      0 0
+# tmpfs	/home/xwga/.cache  tmpfs	noatime,nodev,nosuid,size=2G	0	0
+# UUID=0f341b0f-d230-4f15-a76c-54980e374b60  /          ext4     noatime                    0 1
+#/home/swapfile none      swap   sw                         0 0
+#/dev/cdrom /mnt/cdrom   auto   noauto,ro                  0 0
+#/dev/fd0   /mnt/floppy  auto   noauto                     0 0
+# tmpfs     /home/e788b1/.cache tmpfs noatime,nodev,nosuid,size=1G 0 0
+# //pandorabox/lost+found /mnt/pandorabox cifs  credentials=/home/e788b1/.smb/credentials,uid=1000,gid=100     0 0
