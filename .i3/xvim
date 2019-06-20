@@ -1,3 +1,4 @@
 #!/bin/bash
 
-urxvt -e vim -c"set mouse=a" "$@"
+urxvt -e vim "$@"
+#urxvt -e vim -c"set mouse=a" "$@"

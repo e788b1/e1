@@ -42,6 +42,9 @@ i=10000; for f in *.png; do mv "$f" img_${i#1}.png; ((i++)); done
 i=0; for img in `ls *.png`; do mv $img test-`printf  %.6d $i`.png; i=`expr $i + 1`; done
 find ./ -name '*.png' | while read FILE; do   mv "$FILE" test-`printf  %.6d $i`.png; i=`expr $i + 1`; done
 
+# batch rename to lowercase in $pwd
+find ./ -name '*.png' | while read FILE; do mv -vb "$FILE" "`echo $FILE | tr '[A-Z]' '[a-z]'`"; done
+
 # 7z encode file name
 for i in * ; do  7z a -mhe -r -pPASSWD ${i%.*}.7z $i ; done
 

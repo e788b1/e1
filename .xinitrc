@@ -3,7 +3,7 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
-eval "$(ck-launch-session dbus-launch --sh-syntax --exit-with-session)"
+#eval "$(ck-launch-session dbus-launch --sh-syntax --exit-with-session)"
 exec i3
 # case $(tty | cut -b9-) in
     # (1) exec i3                 ;;
