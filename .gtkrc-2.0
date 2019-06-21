@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/e788b1/.gtkrc-2.0.mine"
-gtk-theme-name="Raleigh"
+gtk-theme-name="Tactile"
 gtk-icon-theme-name="Adwaita"
 gtk-font-name="Ubuntu 10"
 gtk-cursor-theme-name="Adwaita"

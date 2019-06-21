@@ -75,6 +75,10 @@
 !.ncmpcpp/config
 !.pip
 !.pip/pip.conf
+!.themes
+!.themes/Tactile
+!.themes/Tactile/*
+!.themes/Tactile/*/*
 !.vim
 !.vim/autoload
 !.vim/autoload/plug.vim

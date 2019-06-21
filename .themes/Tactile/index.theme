@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Tactile
+Type=X-GNOME-Metatheme
+Comment=Rubbery Sensation!
+Name[hu_HU]=Tactile
+Name[en_US]=Tactile
+
+[X-GNOME-Metatheme]
+GtkTheme=Tactile
+MetacityTheme=Tactile
+IconTheme=Flat-SVG
