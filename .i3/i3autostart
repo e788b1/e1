@@ -33,7 +33,7 @@ i3action setwall &>/dev/null &
 #xrandr --dpi 108
 hsetroot -solid `printf '#%06X\n' $(( RANDOM * 512 ))`
 # killall redshift
-redshift -l 30:114 -t 5700:3600 -m randr -g 0.8 &
+#redshift -l 30:114 -t 5700:3600 -m randr -g 0.8 &
 #nm-applet &
 #xautolock -time 72 -locker 'i3action locki3' &
 # i3action toggletouch
