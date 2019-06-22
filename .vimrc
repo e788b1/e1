@@ -132,7 +132,7 @@ endif
 
 " theme
 "set background=dark
-"colorscheme desert
+colorscheme peachpuff
 
 " set mark column color
 hi! link SignColumn   LineNr
