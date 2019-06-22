@@ -196,9 +196,9 @@ for_window [instance="scratchpad$"] $flyme
 #
 
 #for_window [class="^.*"] border pixel 0
-gaps inner 14
-gaps outer -2
-smart_gaps on
-smart_borders on
+#gaps inner 14
+#gaps outer -2
+#smart_gaps on
+#smart_borders on
 
 #
