@@ -1,7 +1,8 @@
 #!/bin/bash
-
-# workdir="`basename $1`"
-workdir="${PWD##*/}"
+# mv2subdir workdir
+cd $1
+workdir="`basename $1`"
+#workdir="${PWD##*/}"
 for f in -* ; do mv -- "$f" "${f// /_}" > /dev/null 2>&1 ; done
 for f in *\ * ; do mv "$f" "${f// /_}"  > /dev/null 2>&1 ; done
 for f in *\'* ; do mv "$f" "${f//\'/_}" > /dev/null 2>&1 ; done
@@ -14,6 +15,3 @@ do
     mkdir -v "$subdir"
     find . -maxdepth 1 -type f | sort | head -100 | xargs mv -t "$subdir"
 done
-
-
-

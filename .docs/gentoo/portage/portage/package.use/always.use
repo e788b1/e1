@@ -5,7 +5,7 @@
 */* icu jack jpeg lcms lzma mp3
 */* ogg opengl perl png policykit python pulseaudio
 */* svg threads tiff truetype
-*/* udev unicode vaapi vorbis wavpack
+*/* udev udisks unicode vaapi vorbis wavpack
 */* X xattr x264 x265 xft xinerama
 #
 

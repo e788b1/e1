@@ -1,5 +1,6 @@
 app-admin/sudo
 app-admin/syslog-ng
+app-admin/testdisk
 app-arch/atool
 app-arch/p7zip
 app-arch/unrar
@@ -24,6 +25,7 @@ app-portage/eix
 app-portage/genlop
 app-portage/gentoolkit
 app-portage/pfl
+app-portage/porthole
 app-shells/bash-completion
 app-shells/gentoo-zsh-completions
 app-shells/zsh
@@ -46,9 +48,11 @@ media-fonts/symbola
 media-fonts/terminus-font
 media-fonts/ubuntu-font-family
 media-fonts/unifont
+media-fonts/wqy-bitmapfont
 media-gfx/feh
 media-gfx/imagemagick
 media-gfx/scrot
+media-gfx/sxiv
 media-sound/mpg123
 media-sound/netease-cloud-music
 media-sound/pavucontrol
@@ -105,6 +109,7 @@ x11-misc/dmenu
 x11-misc/dunst
 x11-misc/hsetroot
 x11-misc/i3lock
+x11-misc/parcellite
 x11-misc/pcmanfm
 x11-misc/py3status
 x11-misc/qcomicbook

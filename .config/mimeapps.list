@@ -39,8 +39,8 @@ application/xhtml+xml=userapp-SeaMonkey-BSB2TZ.desktop;userapp-Firefox-ZSNCVZ.de
 application/x-extension-xhtml=userapp-SeaMonkey-BSB2TZ.desktop;userapp-Firefox-ZSNCVZ.desktop;userapp-Firefox-UZXTVZ.desktop;
 message/rfc822=userapp-SeaMonkey-BSB2TZ.desktop;
 application/x-extension-eml=userapp-SeaMonkey-BSB2TZ.desktop;
-x-scheme-handler/http=userapp-SeaMonkey-BSB2TZ.desktop;userapp-Firefox-ZSNCVZ.desktop;userapp-Firefox-UZXTVZ.desktop;
-x-scheme-handler/https=userapp-SeaMonkey-BSB2TZ.desktop;userapp-Firefox-ZSNCVZ.desktop;userapp-Firefox-UZXTVZ.desktop;
+x-scheme-handler/http=exo-web-browser.desktop;
+x-scheme-handler/https=exo-web-browser.desktop;
 x-scheme-handler/mailto=userapp-SeaMonkey-BSB2TZ.desktop;
 video/mp4=mpv.desktop;
 video/x-flv=mpv.desktop;
@@ -52,3 +52,4 @@ x-scheme-handler/chrome=userapp-Firefox-ZSNCVZ.desktop;userapp-Firefox-UZXTVZ.de
 application/x-extension-shtml=userapp-Firefox-ZSNCVZ.desktop;userapp-Firefox-UZXTVZ.desktop;
 application/x-extension-xht=userapp-Firefox-ZSNCVZ.desktop;userapp-Firefox-UZXTVZ.desktop;
 application/octet-stream=mpv.desktop;
+
